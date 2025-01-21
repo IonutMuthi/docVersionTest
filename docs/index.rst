@@ -27,7 +27,6 @@ Contents
 
    user_guide/index
    plugins/index
-   tests/index
 
 
    user_guide/bugReport
