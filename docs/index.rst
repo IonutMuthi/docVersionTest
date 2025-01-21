@@ -23,7 +23,7 @@ Contents
 
 .. toctree::
    :includehidden:
-   :maxdepth: 6
+   :maxdepth: 3
 
    user_guide/index
    plugins/index
