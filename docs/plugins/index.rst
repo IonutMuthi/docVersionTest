@@ -12,10 +12,6 @@ that's intuitive and easy to understand.
 
 General IIO plugins
 
-* :ref:`Datalogger <datalogger>`
-
-* :ref:`Debugger <debugger>`
-
 * :ref:`Register Map <registermap>`
 
 Application Specific plugins
@@ -62,8 +58,6 @@ Contents
    :includehidden:
    :maxdepth: 3
    
-   datalogger/datalogger
-   debugger/index
    registermap/registermap
    m2k/index
    pqm/index
