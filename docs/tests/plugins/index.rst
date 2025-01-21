@@ -1,0 +1,22 @@
+.. _tests_plugins:
+
+Plugins Test Cases
+===============================================================================
+
+* :ref:`Datalogger <datalogger_tests>`
+
+Contents
+---------------------------------------------------------------------
+
+.. toctree::
+   :includehidden:
+   :maxdepth: 3
+
+   datalogger/datalogger_test
+
+..
+ add the path to each plugin test case here
+ example dac/dac_tests
+
+
+
