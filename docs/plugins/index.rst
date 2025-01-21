@@ -12,10 +12,6 @@ that's intuitive and easy to understand.
 
 General IIO plugins
 
-* :ref:`ADC Plugin <adc>`
-
-* :ref:`DAC plugin <dac>`
-
 * :ref:`Datalogger <datalogger>`
 
 * :ref:`Debugger <debugger>`
@@ -65,9 +61,7 @@ Contents
 .. toctree::
    :includehidden:
    :maxdepth: 3
-
-   adc/adc
-   dac/dac
+   
    datalogger/datalogger
    debugger/index
    registermap/registermap
