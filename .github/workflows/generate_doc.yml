@@ -39,6 +39,7 @@ jobs:
   deploy-doc:
     runs-on: ubuntu-latest
     needs: build-doc
+    if: startsWith(github.ref, 'refs/tags/')
 
     steps:
     - run: |
@@ -64,7 +65,13 @@ jobs:
 
     - name: Empty gh-pages
       run: |
-        git rm -r . --quiet || true
+        ref=${{ github.ref }}
+        tag=${ref##*/}
+        echo $tag
+        mkdir $tag
+        rsync -avr --remove-source-files --exclude=htmll --exclude $tag ./* $tag
+        find . -mindepth 1 -type d -empty -delete
+
 
     - name: ls -la before download
       run: ls -la
@@ -72,7 +79,6 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         name: html
-        path: htmlllll
 
     - name: ls -la after download
       run: ls -la
