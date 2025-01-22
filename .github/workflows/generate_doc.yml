@@ -72,6 +72,7 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         name: html
+        path: htmlllll
 
     - name: ls -la after download
       run: ls -la
@@ -84,9 +85,10 @@ jobs:
     - name: Commit gh-pages
       run: |
         git add . >> /dev/null
-        git commit -m "deploy: ${GITHUB_SHA}" --allow-empty
         git status
         git diff
+        git commit -m "deploy: ${GITHUB_SHA}" --allow-empty
+
 
     - name: Push to gh-pages
       run: |
