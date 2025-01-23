@@ -65,7 +65,7 @@ jobs:
 
     - name: Empty gh-pages
       run: |
-        git fetch -a
+        git fetch --tags
         git tag -l > versions.txt
         cat versions.txt
         ref=${{ github.ref }}
