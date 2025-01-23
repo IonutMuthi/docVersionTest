@@ -36,8 +36,8 @@ jobs:
           if [ -n "$start_line" ]; then
               lines=$(head -n $(($start_line - 1)) $index_file)
           fi
-          rst_content="Documentation Version\n"
-          rst_content+="====================\n\n"
+          rst_content="\n\nDocumentation Version\n"
+          rst_content+="==========================\n\n"
           for version in $tags; do
               rst_content+="    * \`$version <https://ionutmuthi.github.io/docVersionTest/$version/index.html>\`__\n"
           done
