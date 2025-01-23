@@ -83,6 +83,9 @@ jobs:
       with:
         ref: 'gh-pages'
 
+    - name: ls -la before gh-pages
+      run: ls -la
+
     - name: Empty gh-pages
       run: |
         git fetch --tags --force
@@ -91,8 +94,7 @@ jobs:
         previous_tag=$(git tag -l | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 2 | head -n 1)
         echo $previous_tag
         mkdir $previous_tag
-        rm intex.html
-        rsync -av --remove-source-files --exclude-from=versions.txt --exclude=versions.txt ./* $previous_tag
+        rsync -av --remove-source-files --exclude-from=versions.txt --exclude=versions.txt --exclude=/index.html ./* $previous_tag
         rm versions.txt
         find . -mindepth 1 -type d -empty -delete
 
