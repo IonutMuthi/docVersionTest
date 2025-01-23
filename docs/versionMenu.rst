@@ -1,5 +1,7 @@
-Doc versions
-=============
+Documentation Version
+======================
 
-   - `V0.1.2  <https://github.com/IonutMuthi/docVersionTest/blob/gh-pages/v0.1.3/v0.1.2/index.html>`__
-   - `V0.1.3  <https://github.com/IonutMuthi/docVersionTest/blob/gh-pages/v0.1.3/index.html>`__
+.. toctree::
+
+    * `V0.1.2 <https://ionutmuthi.github.io/docVersionTest/v0.1.4/index.html>`__
+    * `V0.1.3 <https://ionutmuthi.github.io/docVersionTest/v0.1.4/index.html>`__

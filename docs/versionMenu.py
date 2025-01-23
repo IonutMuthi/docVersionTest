@@ -13,7 +13,7 @@ rst_content += "=" * len(rst_content) + "\n\n"
 rst_content += ".. toctree::\n\n"
 
 for version in versions:
-    rst_content += f"    * `{version} <https://github.com/IonutMuthi/docVersionTest/blob/gh-pages/{version}/index.html>`__\n"
+    rst_content += f"    * `{version} <https://ionutmuthi.github.io/docVersionTest/{version}/index.html>`__\n"
 
 # Save the content to versionMenu.rst
 with open('versionMenu.rst', 'w') as file:
