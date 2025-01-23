@@ -6,7 +6,9 @@ def get_git_tags(repo_path):
     tags = result.stdout.splitlines()
     pattern = r'v\d+\.\d+\.\d+'
     regex = re.compile(pattern)
-    filtered_tags = [tag for tag in tags if regex.match(tag) and tag > 'v3.0.0']
+    filtered_tags = [tag for tag in tags if regex.match(tag) and tag > 'v0.1.0']
+    if filtered_tags:
+        filtered_tags.pop()  # Remove the last added tag
     return filtered_tags
 
 # Get tags from the current repository
