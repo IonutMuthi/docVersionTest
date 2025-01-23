@@ -18,18 +18,9 @@ This repository contains Scopy plugins information
 
 .. hdl-build-status::
 
+   
 .. toctree::
-   :includehidden:
-   :maxdepth: 3
-
-   versionMenu
-
-
-Contents
--------------------------------------------------------------------------------
-
-.. toctree::
-   :includehidden:
+   :hidden:
    :maxdepth: 3
 
    user_guide/index
@@ -38,3 +29,10 @@ Contents
 
    user_guide/bugReport
    user_guide/troubleshooting
+   
+
+Documentation Version
+=====================
+
+    * `V0.1.2 <https://ionutmuthi.github.io/docVersionTest/V0.1.2/index.html>`__
+    * `V0.1.3 <https://ionutmuthi.github.io/docVersionTest/V0.1.3/index.html>`__
