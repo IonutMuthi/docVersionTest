@@ -1,11 +1,17 @@
-import json
+import subprocess
+import re
 
-# Read the tags.json file
-with open('tags.json', 'r') as file:
-    data = json.load(file)
+def get_git_tags(repo_path):
+    result = subprocess.run(['git', 'tag'], cwd=repo_path, stdout=subprocess.PIPE, text=True)
+    tags = result.stdout.splitlines()
+    pattern = r'v\d+\.\d+\.\d+'
+    regex = re.compile(pattern)
+    filtered_tags = [tag for tag in tags if regex.match(tag)]
+    return filtered_tags
 
-# Extract versions
-versions = data.get('versions', [])
+# Get tags from the current repository
+repo_path = '../'
+tags = get_git_tags(repo_path)
 
 # Read the current content of index.rst
 with open('index.rst', 'r') as file:
@@ -26,7 +32,7 @@ if start_line is not None:
 rst_content = "Documentation Version\n"
 rst_content += "=" * len("Documentation Version") + "\n\n"
 
-for version in versions:
+for version in tags:
     rst_content += f"    * `{version} <https://ionutmuthi.github.io/docVersionTest/{version}/index.html>`__\n"
 
 # Append the new content
