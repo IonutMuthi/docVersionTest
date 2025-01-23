@@ -69,9 +69,8 @@ jobs:
         tag=${ref##*/}
         echo $tag
         mkdir $tag
-        rsync -avr --remove-source-files --exclude=htmll --exclude $tag ./* $tag
+        rsync -avr --remove-source-files --exclude=html --exclude $tag ./* $tag
         find . -mindepth 1 -type d -empty -delete
-
 
     - name: ls -la before download
       run: ls -la
@@ -94,7 +93,6 @@ jobs:
         git status
         git diff
         git commit -m "deploy: ${GITHUB_SHA}" --allow-empty
-
 
     - name: Push to gh-pages
       run: |
