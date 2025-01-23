@@ -18,6 +18,13 @@ This repository contains Scopy plugins information
 
 .. hdl-build-status::
 
+.. toctree::
+   :includehidden:
+   :maxdepth: 3
+
+   versionMenu
+
+
 Contents
 -------------------------------------------------------------------------------
 
