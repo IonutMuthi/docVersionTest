@@ -35,8 +35,10 @@ This repository contains Scopy plugins information
 Documentation Version
 =====================
 
-    * `v0.1.0 <https://ionutmuthi.github.io/docVersionTest/v0.1.0/index.html>`__
     * `v0.1.1 <https://ionutmuthi.github.io/docVersionTest/v0.1.1/index.html>`__
     * `v0.1.2 <https://ionutmuthi.github.io/docVersionTest/v0.1.2/index.html>`__
     * `v0.1.3 <https://ionutmuthi.github.io/docVersionTest/v0.1.3/index.html>`__
     * `v0.1.4 <https://ionutmuthi.github.io/docVersionTest/v0.1.4/index.html>`__
+    * `v0.1.5 <https://ionutmuthi.github.io/docVersionTest/v0.1.5/index.html>`__
+    * `v2.0.0 <https://ionutmuthi.github.io/docVersionTest/v2.0.0/index.html>`__
+    * `v2.1.5 <https://ionutmuthi.github.io/docVersionTest/v2.1.5/index.html>`__
