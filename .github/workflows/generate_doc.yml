@@ -39,9 +39,9 @@ jobs:
           fi
           rst_content="\n\nDocumentation Version\n"
           rst_content+="==========================\n\n"
-          for version in $tags; do
+            for version in $(echo "$tags" | tac); do
               rst_content+="    * \`$version <https://ionutmuthi.github.io/docVersionTest/$version/user_guide/index.html>\`__\n"
-          done
+            done
           lines+="$rst_content"
           echo -e "$lines" > $index_file
 
