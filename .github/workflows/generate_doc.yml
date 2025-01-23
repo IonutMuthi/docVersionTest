@@ -65,12 +65,13 @@ jobs:
 
     - name: Empty gh-pages
       run: |
+        jq -r '.versions[]' tags.json > versions.txt
         ref=${{ github.ref }}
         tag=${ref##*/}
-        echo $tag
         mkdir $tag
-        rsync -avr --remove-source-files --exclude=html --exclude $tag ./* $tag
+        rsync -av --remove-source-files --exclude-from=versions.txt --exclude=versions.txt --exclude=$tag ./* $tag
         find . -mindepth 1 -type d -empty -delete
+        rm versions.txt
 
     - name: ls -la before download
       run: ls -la
