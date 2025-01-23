@@ -28,7 +28,8 @@ jobs:
     - name: format version path
       working-directory: docs
       run: |
-          tags=$(git tag | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | awk '$0 > "v0.1.0"')
+          git fetch --tags --force
+          tags=$(git tag -l | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | awk '$0 > "v0.1.0"') 
           tags=$(echo "$tags" | head -n -1)
           index_file="index.rst"
           lines=$(cat $index_file)
@@ -87,11 +88,10 @@ jobs:
         git fetch --tags --force
         git tag -l > versions.txt
         cat versions.txt
-        ref=${{ github.ref }}
-        tag=${ref##*/}
-        echo $tag
-        mkdir $tag
-        rsync -av --remove-source-files --exclude-from=versions.txt --exclude=versions.txt --exclude=$tag ./* $tag
+        previous_tag=$(git tag -l | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 2 | head -n 1)
+        echo $previous_tag
+        mkdir $previous_tag
+        rsync -av --remove-source-files --exclude-from=versions.txt --exclude=versions.txt ./* $previous_tag
         rm versions.txt
         find . -mindepth 1 -type d -empty -delete
 
